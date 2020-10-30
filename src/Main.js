@@ -1,12 +1,19 @@
-new p5 (function (app) {
-    var logic;
+let logic;
 
-    function setup(){
-        logic = new Logic(app);
-        createCanvas (800,550)
-    }
+function setup(){
+createCanvas(800,800);
+logic=new Logic(this);
+}
 
-    function draw(){
-        Logic.draw();
-    }
-});
+function draw(){
+    background(155);
+    logic.draw();
+}
+
+function mouseClicked(){
+    logic.mouse();
+}
+function keypressed(){
+    logic.key(); 
+}
+

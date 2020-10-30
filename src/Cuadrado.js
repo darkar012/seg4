@@ -12,7 +12,7 @@ class Cuadrado extends Figure{
     move(){
         this.y+= this.velocidad;
         if(this.y>184-50 || this.y<0) {
-            this.velocidad=this.velocidad;
+            this.velocidad=-this.velocidad;
         }
     }
 }
