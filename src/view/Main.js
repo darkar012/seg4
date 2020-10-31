@@ -2,18 +2,18 @@ let logic;
 
 function setup(){
 createCanvas(800,800);
-logic=new Logic(this);
+control=new Control(this);
 }
 
 function draw(){
     background(155);
-    logic.draw();
+    control.draw();
 }
 
 function mouseClicked(){
-    logic.mouse();
+    control.mouse();
 }
-function keypressed(){
-    logic.key(); 
+function keyPressed(){
+    control.key(); 
 }
 

@@ -15,4 +15,7 @@ class Cuadrado extends Figure{
             this.velocidad=-this.velocidad;
         }
     }
+    getValor(){
+        return this.valor;
+    }
 }

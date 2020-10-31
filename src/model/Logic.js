@@ -83,7 +83,7 @@ break;
                  }  
                  if (mouseX >= 290 && mouseX<= 290+125 && mouseY>=449 && mouseY<=449+50) {
                     console.log("Quitar");
-                   if (this.square.length>0){
+                   if (this.square.length>1){
                        this.square.splice(0,1);
                    }
                 }
@@ -97,10 +97,11 @@ break;
     }
 }
 key(){
-    if (keycode==78){
+    if (keyCode===78){
     this.square.sort(function(a,b){
     return a.getValor() - b.getValor();
+    console.log (this.square);
     });
 }
-    }
+}
 }
