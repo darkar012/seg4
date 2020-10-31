@@ -1,3 +1,4 @@
+let logic;
 class Control {
     constructor(app){
     this.app=app;

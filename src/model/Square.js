@@ -1,12 +1,12 @@
-class Ellipse extends Figure {
+class Square extends Figure {
     constructor(x, y, number, size) {
         super(x, y, number, size);
         this.velocidad = random(1, 3);
         this.valor = int(random(1, 10));
     }
 
-    dibujarFigura(posX, size) {
-        Ellipse(posX, this.y, size, size);
+    drawFigure(posX, size) {
+        rect(posX, this.y, size, size);
         text(this.valor, posX + 20, this.y + 30);
     }
     move() {
