@@ -103,13 +103,11 @@ class Logic {
                     });
                 }
                 if (mouseX >= 630 && mouseX <= 630 + 125 && mouseY >= 449 && mouseY <= 449 + 50) {
-                    console.log(this.square);
+
                     this.circleArray = this.square.map(function (x) {
-                      return x = new Circle (70 * x.pos, 300, x.getValor, x.size);
+                        return x = new Circle(70 * x.pos, 300, x.getValor, x.size);
                     })
                     this.paintEllipse = true;
-                    console.log(this.circleArray);
-
                 }
                 break;
         }
