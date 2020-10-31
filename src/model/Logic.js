@@ -5,9 +5,9 @@ class Logic {
         this.screen = 0;
         this.error = false;
         this.size = 1;
-        this.circle = [];
+        this.circleArray = [];
         this.square = [];
-        
+
         this.position = [];
         this.position[0] = 50;
         this.position[1] = 120;
@@ -19,6 +19,7 @@ class Logic {
         this.position[7] = 540;
         this.position[8] = 610;
         this.position[9] = 610;
+        this.paintEllipse = false;
     }
     draw() {
         switch (this.screen) {
@@ -53,6 +54,12 @@ class Logic {
                 for (let i = 0; i < this.square.length; i++) {
                     this.square[i].drawFigure((70 * i) + 70, 50 * this.size);
                     this.square[i].move();
+                }
+                if (this.paintEllipse) {
+                    for (let i = 0; i < this.circleArray.length; i++) {
+                        this.circleArray[i].drawFigure((70 * i) + 70, 50 * this.size);
+                        this.circleArray[i].move();
+                    }
                 }
                 break;
         }
@@ -96,11 +103,12 @@ class Logic {
                     });
                 }
                 if (mouseX >= 630 && mouseX <= 630 + 125 && mouseY >= 449 && mouseY <= 449 + 50) {
-                   /* this.circle =this.square.map(function (x) {
-                        
-                        new Ellipse(getPosition, 100, getCounter(), 50);
-                })*/
-                console.log (this.circle);
+                    console.log(this.square);
+                    this.circleArray = this.square.map(function (x) {
+                      return x = new Circle (50 * x.pos, 300, x.getValor, x.size);
+                    })
+                    this.paintEllipse = true;
+                    console.log(this.circleArray);
 
                 }
                 break;
@@ -109,7 +117,7 @@ class Logic {
     key() {
         if (keyCode === 78) {
             this.square.sort(function (a, b) {
-    
+
                 return a.getValor() - b.getValor();
             });
         }
