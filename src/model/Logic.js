@@ -5,7 +5,9 @@ class Logic {
         this.screen = 0;
         this.error = false;
         this.size = 1;
+        this.circle = [];
         this.square = [];
+        
         this.position = [];
         this.position[0] = 50;
         this.position[1] = 120;
@@ -17,7 +19,6 @@ class Logic {
         this.position[7] = 540;
         this.position[8] = 610;
         this.position[9] = 610;
-        this.ellipseExist = false;
     }
     draw() {
         switch (this.screen) {
@@ -95,7 +96,12 @@ class Logic {
                     });
                 }
                 if (mouseX >= 630 && mouseX <= 630 + 125 && mouseY >= 449 && mouseY <= 449 + 50) {
-                    console.log("circulo");
+                   /* this.circle =this.square.map(function (x) {
+                        
+                        new Ellipse(getPosition, 100, getCounter(), 50);
+                })*/
+                console.log (this.circle);
+
                 }
                 break;
         }
@@ -105,8 +111,6 @@ class Logic {
             this.square.sort(function (a, b) {
     
                 return a.getValor() - b.getValor();
-                
-                
             });
         }
     }

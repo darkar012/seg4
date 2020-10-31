@@ -6,7 +6,7 @@ class Ellipse extends Figure {
     }
 
     dibujarFigura(posX, size) {
-        Ellipse(posX, this.y, size, size);
+        ellipse(posX, this.y, size, size);
         text(this.valor, posX + 20, this.y + 30);
     }
     move() {
