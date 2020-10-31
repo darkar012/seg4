@@ -105,7 +105,7 @@ class Logic {
                 if (mouseX >= 630 && mouseX <= 630 + 125 && mouseY >= 449 && mouseY <= 449 + 50) {
                     console.log(this.square);
                     this.circleArray = this.square.map(function (x) {
-                      return x = new Circle (50 * x.pos, 300, x.getValor, x.size);
+                      return x = new Circle (70 * x.pos, 300, x.getValor, x.size);
                     })
                     this.paintEllipse = true;
                     console.log(this.circleArray);
@@ -117,6 +117,10 @@ class Logic {
     key() {
         if (keyCode === 78) {
             this.square.sort(function (a, b) {
+
+                return a.getValor() - b.getValor();
+            });
+            this.circleArray.sort(function (a, b) {
 
                 return a.getValor() - b.getValor();
             });
