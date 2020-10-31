@@ -4,6 +4,7 @@ class Logic {
     this.contador = 0;
     this.pantalla = 0;
     this.error = false;
+    this.size=1;
     this.square = [];
     this.position=[];
     this.position[0] = 50;
@@ -48,7 +49,7 @@ class Logic {
             text("Circulos",640, 480);
 
             for (let i = 0; i < this.square.length; i++) {
-                this.square[i].dibujarFigura((70*i)+70);
+                this.square[i].dibujarFigura((70*i)+70, 50*this.size);
                 this.square[i].move();                
             }
 break;
@@ -66,7 +67,7 @@ break;
                 if (mouseX >= 178 && mouseX<= 178+90 && mouseY>=475 && mouseY<=475+20 && this.contador > 0 && this.contador <=10) {
                     this.pantalla=1;
                     for (let i = 0; i < this.contador; i++) {
-                        this.square.push (new Cuadrado(this.position[this.pos],100,this.contador))
+                        this.square.push (new Cuadrado(this.position[this.pos],100,this.contador,this.size))
                         console.log (this.contador);
                     }
                 }
@@ -78,7 +79,7 @@ break;
                  if (mouseX >= 120 && mouseX<= 120+125 && mouseY>=449 && mouseY<=449+50) {
                      console.log("agregar");
                     if (this.square.length>=0 && this.square.length <10){
-                        this.square.push(new Cuadrado (this.position[this.pos],100,this.contador));
+                        this.square.push(new Cuadrado (this.position[this.pos],100,this.contador,this.size));
                     }
                  }  
                  if (mouseX >= 290 && mouseX<= 290+125 && mouseY>=449 && mouseY<=449+50) {
@@ -88,7 +89,10 @@ break;
                    }
                 }
                 if (mouseX >= 460 && mouseX<= 460+125 && mouseY>=449 && mouseY<=449+50){
-                    console.log("tamaño");
+                    this.square.forEach(element => {
+                        this.size=2;
+                        console.log(element.size);
+                    });
                 }
                 if (mouseX >= 630 && mouseX<= 630+125 && mouseY>=449 && mouseY<=449+50){
                     console.log("circulo");
@@ -102,6 +106,6 @@ key(){
     return a.getValor() - b.getValor();
     console.log (this.square);
     });
-}
+    }
 }
 }

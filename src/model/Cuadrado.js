@@ -1,12 +1,12 @@
 class Cuadrado extends Figure{
-    constructor(x,y,number){
-        super(x,y,number);
+    constructor(x,y,number,size){
+        super(x,y,number,size);
         this.velocidad=random(1,3);
         this.valor=int(random(1,10));
     }
 
-    dibujarFigura(posX){
-        rect (posX,this.y,50,50);
+    dibujarFigura(posX,size){
+        rect (posX,this.y,size,size);
         text (this.valor,posX+20,this.y+30);
     }
     move(){
@@ -18,4 +18,10 @@ class Cuadrado extends Figure{
     getValor(){
         return this.valor;
     }
+    getValor(){
+        return this.size;
+    }
+    setSize(size) {
+		this.size = size;
+	}
 }
